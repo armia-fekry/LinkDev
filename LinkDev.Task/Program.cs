@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using TestApiJWT.Helpers;
-using TestApiJWT.Models;
-using TestApiJWT.Services;
+using LinkDev.Task.Helpers;
+using LinkDev.Task.Models;
+using LinkDev.Task.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

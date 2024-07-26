@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace TestApiJWT.Migrations
+namespace LinkDev.Task.Migrations
 {
     public partial class SeedRoles : Migration
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TestApiJWT.Migrations
+namespace LinkDev.Task.Migrations
 {
     public partial class InitialCreate : Migration
     {

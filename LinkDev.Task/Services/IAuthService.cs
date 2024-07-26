@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using TestApiJWT.Models;
+using LinkDev.Task.Models;
 
-namespace TestApiJWT.Services
+namespace LinkDev.Task.Services
 {
     public interface IAuthService
     {

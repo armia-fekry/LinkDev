@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace TestApiJWT.Migrations
+namespace LinkDev.Task.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210103011737_SeedRoles")]
@@ -152,7 +152,7 @@ namespace TestApiJWT.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("TestApiJWT.Models.ApplicationUser", b =>
+            modelBuilder.Entity("LinkDev.Task.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -238,7 +238,7 @@ namespace TestApiJWT.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TestApiJWT.Models.ApplicationUser", null)
+                    b.HasOne("LinkDev.Task.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -247,7 +247,7 @@ namespace TestApiJWT.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TestApiJWT.Models.ApplicationUser", null)
+                    b.HasOne("LinkDev.Task.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -262,7 +262,7 @@ namespace TestApiJWT.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TestApiJWT.Models.ApplicationUser", null)
+                    b.HasOne("LinkDev.Task.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -271,7 +271,7 @@ namespace TestApiJWT.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TestApiJWT.Models.ApplicationUser", null)
+                    b.HasOne("LinkDev.Task.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace TestApiJWT.Models
+namespace LinkDev.Task.Models
 {
     public class ApplicationUser : IdentityUser
     {

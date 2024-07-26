@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "TestApiJWT": {
+    "LinkDev.Task": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

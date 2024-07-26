@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TestApiJWT.Models
+namespace LinkDev.Task.Models
 {
     public class RegisterModel
     {

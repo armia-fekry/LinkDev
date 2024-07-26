@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using TestApiJWT.Models;
-using TestApiJWT.Services;
+using LinkDev.Task.Models;
+using LinkDev.Task.Services;
 
-namespace TestApiJWT.Controllers
+namespace LinkDev.Task.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

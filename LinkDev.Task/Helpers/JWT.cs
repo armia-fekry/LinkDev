@@ -1,4 +1,4 @@
-﻿namespace TestApiJWT.Helpers
+﻿namespace LinkDev.Task.Helpers
 {
     public class JWT
     {

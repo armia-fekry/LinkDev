@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Recruiting_Company_Web_API.Entities
+namespace LinkDev.Task.Entities
 {
     public class Branch
     {

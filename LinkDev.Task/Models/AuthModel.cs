@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestApiJWT.Models
+namespace LinkDev.Task.Models
 {
     public class AuthModel
     {

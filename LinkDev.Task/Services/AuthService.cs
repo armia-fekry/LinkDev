@@ -4,10 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using TestApiJWT.Helpers;
-using TestApiJWT.Models;
+using LinkDev.Task.Helpers;
+using LinkDev.Task.Models;
 
-namespace TestApiJWT.Services
+namespace LinkDev.Task.Services
 {
     public class AuthService : IAuthService
     {
