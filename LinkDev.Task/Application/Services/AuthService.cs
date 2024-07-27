@@ -6,8 +6,9 @@ using System.Security.Claims;
 using System.Text;
 using LinkDev.Task.Helpers;
 using LinkDev.Task.Models;
+using LinkDev.Task.Application.Contracts;
 
-namespace LinkDev.Task.Services
+namespace LinkDev.Task.Application.Services
 {
     public class AuthService : IAuthService
     {

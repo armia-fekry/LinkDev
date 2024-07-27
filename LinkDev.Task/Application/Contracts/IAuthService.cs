@@ -1,7 +1,6 @@
-﻿using System.Threading.Tasks;
-using LinkDev.Task.Models;
+﻿using LinkDev.Task.Models;
 
-namespace LinkDev.Task.Services
+namespace LinkDev.Task.Application.Contracts
 {
     public interface IAuthService
     {

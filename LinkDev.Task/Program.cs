@@ -6,7 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using LinkDev.Task.Helpers;
 using LinkDev.Task.Models;
-using LinkDev.Task.Services;
+using LinkDev.Task.Application.Services;
+using LinkDev.Task.Application.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.Configure<JWT>(builder.Configuration.GetSection("JWT"));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IBranchService, BranchService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DepartmentsDb"))

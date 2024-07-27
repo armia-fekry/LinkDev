@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LinkDev.Task.Models;
-using LinkDev.Task.Services;
+using LinkDev.Task.Application.Contracts;
 
 namespace LinkDev.Task.Controllers
 {
