@@ -1,11 +1,11 @@
-﻿using LinkDev.Task.DTO;
+﻿using LinkDev.Task.Application.DTO;
 
 namespace LinkDev.Task.Application.Contracts
 {
     public interface IBranchService
     {
-        Task<IReadOnlyList<BranchGetDto>> GetBranches(BranchesFilterParameter branchesFilter);
-        Task<BranchGetDto> AddBranch(BranchPostDto branch);
-        Task<bool> DeleteBranch(Guid branchId);
+        Task<IReadOnlyList<BranchGetDto>> GetBranchesAsync(BranchesFilterParameter branchesFilter);
+        Task<BranchGetDto> AddBranchAsync(BranchPostDto branch);
+        Task<bool> DeleteBranchAsync(Guid branchId);
     }
 }

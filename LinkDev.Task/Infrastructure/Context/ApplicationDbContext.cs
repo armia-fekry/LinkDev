@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using LinkDev.Task.Models;
-using LinkDev.Task.Entities;
+using LinkDev.Task.Application.Models;
+using LinkDev.Task.Infrastructure.Entities;
 
-namespace LinkDev.Task.Context
+namespace LinkDev.Task.Infrastructure.Context
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -15,6 +15,6 @@ namespace LinkDev.Task.Context
         {
             base.OnModelCreating(builder);
         }
-        
+
     }
 }

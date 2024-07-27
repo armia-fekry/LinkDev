@@ -1,4 +1,4 @@
-﻿namespace LinkDev.Task.DTO
+﻿namespace LinkDev.Task.Application.DTO
 {
     public record BranchesFilterParameter(
         int pageSize,

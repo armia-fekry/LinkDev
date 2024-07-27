@@ -1,7 +1,7 @@
 ﻿using LinkDev.Task.Application.Contracts;
-using LinkDev.Task.Context;
-using LinkDev.Task.DTO;
-using LinkDev.Task.Entities;
+using LinkDev.Task.Application.DTO;
+using LinkDev.Task.Infrastructure.Context;
+using LinkDev.Task.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LinkDev.Task.Application.Services
@@ -14,22 +14,35 @@ namespace LinkDev.Task.Application.Services
         {
             this._applicationDbContext  =applicationDbContext;
         }
-        public async Task<BranchGetDto> AddBranch(BranchPostDto branchDto)
+        public async Task<BranchGetDto> AddBranchAsync(BranchPostDto branchDto)
         {
-            var model = GetBranchModel(branchDto);
-            await _applicationDbContext.AddAsync(model);
-            await _applicationDbContext.SaveChangesAsync();
-            return await System.Threading.Tasks.Task.FromResult(GetBranchDto(branchDto));
+            try
+            {
+                var model = GetBranchModel(branchDto);
+                if (TimeSpan.TryParse(branchDto.OpeningHour, out var openingHour) &&
+                    TimeSpan.TryParse(branchDto.ClosingHour, out var closingHour))
+                {
+                    model.OpeningHour = openingHour;
+                    model.ClosingHour = closingHour;
+                }
+                await _applicationDbContext.Branches.AddAsync(model);
+                await _applicationDbContext.SaveChangesAsync();
+                return await System.Threading.Tasks.Task.FromResult(GetBranchDto(branchDto));
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
 
+            
             Branch GetBranchModel(BranchPostDto branch) =>
                 new Branch 
                 {
                     BranchId = Guid.NewGuid(),
-                    ClosingHour = branch.ClosingHour,
                     ManagerName = branch.ManagerName,
-                    OpeningHour = branch.OpeningHour,
                     Title = branch.Title
                 };
+            
         }
 
         private BranchGetDto GetBranchDto(BranchPostDto branchDto) =>
@@ -40,7 +53,7 @@ namespace LinkDev.Task.Application.Services
                 branchDto.ManagerName);
  
             
-        public async Task<bool> DeleteBranch(Guid branchId)
+        public async Task<bool> DeleteBranchAsync(Guid branchId)
         {
             try
             {
@@ -62,7 +75,7 @@ namespace LinkDev.Task.Application.Services
            
         }
 
-        public async Task<IReadOnlyList<BranchGetDto>> GetBranches(BranchesFilterParameter branchesFilter)
+        public async Task<IReadOnlyList<BranchGetDto>> GetBranchesAsync(BranchesFilterParameter branchesFilter)
         {
             var branchesQuery = _applicationDbContext.Branches.AsNoTracking();
             if (branchesFilter is { pageNumber:> 0 } && branchesFilter is { pageSize :> 1} )
@@ -73,8 +86,8 @@ namespace LinkDev.Task.Application.Services
                             new BranchGetDto(
                                 res.BranchId,
                                 res.Title,
-                                res.OpeningHour,
-                                res.ClosingHour,
+                                res.OpeningHour.ToString(),
+                                res.ClosingHour.ToString(),
                                 res.ManagerName))
                              .ToListAsync();
                             

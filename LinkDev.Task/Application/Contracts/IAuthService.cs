@@ -1,4 +1,4 @@
-﻿using LinkDev.Task.Models;
+﻿using LinkDev.Task.Application.Models;
 
 namespace LinkDev.Task.Application.Contracts
 {

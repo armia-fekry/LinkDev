@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LinkDev.Task.Models
+namespace LinkDev.Task.Application.Models
 {
     public class AuthModel
     {

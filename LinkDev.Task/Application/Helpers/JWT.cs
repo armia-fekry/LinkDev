@@ -1,4 +1,4 @@
-﻿namespace LinkDev.Task.Helpers
+﻿namespace LinkDev.Task.Application.Helpers
 {
     public class JWT
     {

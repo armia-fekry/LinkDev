@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LinkDev.Task.Models
+namespace LinkDev.Task.Application.Models
 {
     public class AddRoleModel
     {

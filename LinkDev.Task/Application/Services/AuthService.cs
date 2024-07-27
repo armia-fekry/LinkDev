@@ -4,9 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using LinkDev.Task.Helpers;
-using LinkDev.Task.Models;
 using LinkDev.Task.Application.Contracts;
+using LinkDev.Task.Application.Models;
+using LinkDev.Task.Application.Helpers;
 
 namespace LinkDev.Task.Application.Services
 {

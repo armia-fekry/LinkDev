@@ -1,13 +1,13 @@
-using LinkDev.Task.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using LinkDev.Task.Helpers;
-using LinkDev.Task.Models;
 using LinkDev.Task.Application.Services;
 using LinkDev.Task.Application.Contracts;
+using LinkDev.Task.Application.Models;
+using LinkDev.Task.Infrastructure.Context;
+using LinkDev.Task.Application.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
